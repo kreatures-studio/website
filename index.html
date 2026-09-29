@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="bestiary">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kreatures — Behind your project. Co-development, art and animation.">
+    <title>KREATURES · The creatures behind your game</title>
+    <meta name="description" content="Kreatures is a game studio based at the Polo de Contenido Digital. Co-development, art and animation for game projects worldwide.">
+    <meta name="theme-color" content="#003049">
+
     <meta property="og:title" content="KREATURES">
-    <meta property="og:description" content="Behind your project. Co-development, art and animation for game studios.">
+    <meta property="og:description" content="The creatures behind your game. Co-development, art and animation for game studios.">
     <meta property="og:image" content="https://kreatures-studio.github.io/website/images/og-image.png">
     <meta property="og:image:secure_url" content="https://kreatures-studio.github.io/website/images/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -14,442 +17,325 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KREATURES">
-    <meta name="twitter:description" content="Behind your project. Co-development, art and animation for game studios.">
+    <meta name="twitter:description" content="The creatures behind your game. Co-development, art and animation for game studios.">
     <meta name="twitter:image" content="https://kreatures-studio.github.io/website/images/og-image.png">
+
     <link rel="icon" type="image/png" href="images/fox.png">
-    <title>KREATURES · Bestiary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas id="particles"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-    <div class="cursor-glow" id="cursorGlow"></div>
+    <a class="skip-link" href="#studio">Skip to content</a>
 
-    <nav class="nav">
-        <a href="#hero" class="nav-brand">
-            <span class="nav-sigil">◈</span>
-            <span class="nav-name">KREATURES</span>
+    <header class="topbar" id="topbar">
+        <a class="brand" href="#top">
+            <img src="images/fox.png" alt="" class="brand-mark">
+            <span class="brand-name">Kreatures</span>
         </a>
-        <div class="nav-links">
-            <a href="#divisions" class="nav-link"><span class="link-num">01</span>Divisions</a>
-            <a href="#team" class="nav-link"><span class="link-num">02</span>Bestiary</a>
-            <a href="#contact" class="nav-link"><span class="link-num">03</span>Summon</a>
+        <nav class="menu" id="menu" aria-label="Main">
+            <a href="#studio"><b>01</b>Studio</a>
+            <a href="#services"><b>02</b>Services</a>
+            <a href="#process"><b>03</b>Process</a>
+            <a href="#bestiary"><b>04</b>Bestiary</a>
+            <a href="#models"><b>05</b>Collaborate</a>
+            <a href="#contact"><b>06</b>Contact</a>
+        </nav>
+        <div class="topbar-actions">
+            <a class="btn btn-small" href="#contact">Start a project</a>
+            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span>
+            </button>
         </div>
-        <div class="theme-selector">
-            <button class="theme-dot" data-theme="bestiary" title="Bestiary" style="background:#003049;border-color:#D62828"></button>
-            <button class="theme-dot" data-theme="cinder" title="Cinder" style="background:#1a0505;border-color:#D62828"></button>
-            <button class="theme-dot" data-theme="depths" title="Depths" style="background:#002840;border-color:#FCBF49"></button>
-            <button class="theme-dot" data-theme="solar" title="Solar" style="background:#1a0f00;border-color:#F77F00"></button>
-            <button class="theme-dot" data-theme="pale" title="Pale" style="background:#EAE2B7;border-color:#003049"></button>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
-            <span></span><span></span>
-        </button>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#divisions" class="mobile-link">Divisions</a>
-        <a href="#team" class="mobile-link">Bestiary</a>
-        <a href="#contact" class="mobile-link">Summon</a>
-        <div class="mobile-themes">
-            <span class="mobile-label">THEME</span>
-            <div class="theme-selector">
-                <button class="theme-dot" data-theme="bestiary" title="Bestiary" style="background:#003049;border-color:#D62828"></button>
-                <button class="theme-dot" data-theme="cinder" title="Cinder" style="background:#1a0505;border-color:#D62828"></button>
-                <button class="theme-dot" data-theme="depths" title="Depths" style="background:#002840;border-color:#FCBF49"></button>
-                <button class="theme-dot" data-theme="solar" title="Solar" style="background:#1a0f00;border-color:#F77F00"></button>
-                <button class="theme-dot" data-theme="pale" title="Pale" style="background:#EAE2B7;border-color:#003049"></button>
-            </div>
-        </div>
-    </div>
+    </header>
 
     <main>
-        <section id="hero" class="section hero">
-            <div class="hero-circle">
-                <div class="ring ring-outer"></div>
-                <div class="ring ring-mid"></div>
-                <div class="ring ring-inner"></div>
-                <div class="ring ring-core"></div>
-                <div class="ring ring-pulse"></div>
-                <div class="ring-glow"></div>
-                <div class="hero-eye">
-                    <div class="hero-pupil"></div>
-                </div>
-                <div class="hero-beasts">
-                    <div class="beast beast-fox">
-                        <img src="images/fox.png" alt="Code Fox">
-                    </div>
-                    <div class="beast beast-bird">
-                        <img src="images/bird.png" alt="Art Bird">
-                    </div>
-                    <div class="beast beast-cat">
-                        <img src="images/cat.png" alt="Anim Cat">
-                    </div>
-                </div>
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title" id="heroTitle">
-                    <span class="title-word">WE</span>
-                    <span class="title-word">ARE</span>
-                    <span class="title-word title-creature">KREATURES</span>
+        <!-- 00 · HERO -->
+        <section class="slide slide-hero" id="top" data-slide="00">
+            <div class="slide-tag">Slide 00 / 06 · Manifesto</div>
+            <div class="hero-inner">
+                <p class="kicker">Game studio · Polo de Contenido Digital · España</p>
+                <h1 class="mega">
+                    <span class="mega-line">We are</span>
+                    <span class="mega-line mega-line-alt" id="megaWord">Kreatures</span>
                 </h1>
-                <div class="hero-line"></div>
-                <p class="hero-sub">Behind your project</p>
-                <a href="#divisions" class="hero-cta">
-                    Enter the Bestiary
-                    <span class="cta-arrow">→</span>
-                </a>
+                <p class="hero-tagline">The creatures behind your game.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#services">See what we do</a>
+                    <a class="btn btn-ghost" href="#contact">Tell us about your project</a>
+                </div>
             </div>
-            <div class="hero-scroll">
-                <span class="scroll-text">SCROLL</span>
-                <div class="scroll-line"></div>
+            <ul class="creature-strip" aria-label="The Kreatures">
+                <li class="creature" data-tilt><img src="images/owl.png" alt="Owl — the researcher"></li>
+                <li class="creature" data-tilt><img src="images/fox.png" alt="Fox — code"></li>
+                <li class="creature" data-tilt><img src="images/cat.png" alt="Cat — animation"></li>
+                <li class="creature" data-tilt><img src="images/bird.png" alt="Bird — QA"></li>
+                <li class="creature" data-tilt><img src="images/mouse.png" alt="Mouse — 2D art"></li>
+            </ul>
+            <div class="hero-foot">
+                <span class="scroll-hint"><i></i>Scroll</span>
+                <span class="hero-year">Est. 2024</span>
             </div>
         </section>
 
-        <section id="divisions" class="section divisions">
-            <div class="section-label">
-                <span class="label-sigil">◈</span>
-                <span>THE THREE DOMAINS</span>
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="tickerTrack">
+                <span>Co-development</span><i>●</i><span>Concept &amp; prototype</span><i>●</i><span>3D art</span><i>●</i><span>Animation &amp; VFX</span><i>●</i><span>QA &amp; polish</span><i>●</i><span>Long-term partnership</span><i>●</i>
             </div>
-            <div class="divisions-container">
-                <article class="domain reveal" data-domain="code" style="--domain-color: var(--orange)">
-                    <div class="domain-mask">
-                        <div class="domain-cocoon">
-                            <div class="cocoon-glow"></div>
-                            <div class="cocoon-creature">
-                                <img src="images/fox.png" alt="Code Fox">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="domain-body">
-                        <div class="domain-header">
-                            <span class="domain-num">01</span>
-                            <h2 class="domain-title">Krea.Code</h2>
-                        </div>
-                        <p class="domain-desc">Gameplay programming, engine optimization, systems & tools.</p>
-                        <ul class="domain-skills">
-                            <li>C++ / C# / Blueprint</li>
-                            <li>Unity / Unreal / Custom</li>
-                            <li>Multiplatform Optimization</li>
-                        </ul>
-                        <div class="domain-code">
-                            <div class="code-stage" id="codeStage">
-                                <pre class="code-typer"><code id="codeTyper"></code><span class="code-cursor">▌</span></pre>
-                                <canvas id="snakeCanvas" class="domain-canvas hidden"></canvas>
-                                <span class="domain-status" id="codeStatus">▸ booting...</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+        </div>
 
-                <article class="domain reveal" data-domain="art" style="--domain-color: var(--butterscotch)">
-                    <div class="domain-mask">
-                        <div class="domain-cocoon">
-                            <div class="cocoon-glow"></div>
-                            <div class="cocoon-creature">
-                                <img src="images/bird.png" alt="Art Bird">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="domain-body">
-                        <div class="domain-header">
-                            <span class="domain-num">02</span>
-                            <h2 class="domain-title">Krea.Art</h2>
-                        </div>
-                        <p class="domain-desc">Concept art, 3D modeling, texturing & UI/UX for games.</p>
-                        <ul class="domain-skills">
-                            <li>Character & Environment</li>
-                            <li>PBR / Hand-painted</li>
-                            <li>High & Low Poly</li>
-                        </ul>
-                        <div class="domain-canvas-wrap">
-                            <canvas id="artCanvas" class="domain-canvas"></canvas>
-                            <span class="domain-status" id="artStatus">▸ sketching...</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="domain reveal" data-domain="anim" style="--domain-color: var(--red)">
-                    <div class="domain-mask">
-                        <div class="domain-cocoon">
-                            <div class="cocoon-glow"></div>
-                            <div class="cocoon-creature">
-                                <img src="images/cat.png" alt="Anim Cat">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="domain-body">
-                        <div class="domain-header">
-                            <span class="domain-num">03</span>
-                            <h2 class="domain-title">Krea.Anim</h2>
-                        </div>
-                        <p class="domain-desc">Character animation, rigging, VFX, motion design for games.</p>
-                        <ul class="domain-skills">
-                            <li>2D / 3D Animation</li>
-                            <li>Rigging & Skinning</li>
-                            <li>Particle VFX</li>
-                        </ul>
-                        <div class="domain-canvas-wrap">
-                            <canvas id="animCanvas" class="domain-canvas"></canvas>
-                            <span class="domain-status" id="animStatus">▸ morphing...</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="team" class="section team">
-            <div class="section-label">
-                <span class="label-sigil">◈</span>
-                <span>THE BESTIARY</span>
-            </div>
-            <div class="tarots">
-                <div class="tarot reveal" data-beast="owl">
-                    <div class="tarot-border">
-                        <div class="tarot-corner tl"></div>
-                        <div class="tarot-corner tr"></div>
-                        <div class="tarot-corner bl"></div>
-                        <div class="tarot-corner br"></div>
-                    </div>
-                    <div class="tarot-img">
-                        <img src="images/owl.png" alt="Production Owl">
-                        <div class="tarot-overlay"></div>
-                    </div>
-                    <div class="tarot-body">
-                        <div class="tarot-header">
-                            <span class="tarot-num">IV</span>
-                            <h3>Prod_Owl</h3>
-                        </div>
-                        <span class="tarot-role">The Producer</span>
-                        <div class="tarot-stats">
-                            <div class="tstat">
-                                <span class="tstat-label">PROD</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:94%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">LEAD</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:90%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">PLAN</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:95%"></div></div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- 01 · STUDIO -->
+        <section class="slide slide-studio" id="studio" data-slide="01">
+            <div class="slide-tag">Slide 01 / 06 · Who we are</div>
+            <div class="split">
+                <div class="split-head reveal">
+                    <h2 class="title">Small team,<br>full stack<br><em>of game skills</em></h2>
                 </div>
-
-                <div class="tarot reveal" data-beast="mouse">
-                    <div class="tarot-border">
-                        <div class="tarot-corner tl"></div>
-                        <div class="tarot-corner tr"></div>
-                        <div class="tarot-corner bl"></div>
-                        <div class="tarot-corner br"></div>
-                    </div>
-                    <div class="tarot-img">
-                        <img src="images/mouse.png" alt="2D Mouse">
-                        <div class="tarot-overlay"></div>
-                    </div>
-                    <div class="tarot-body">
-                        <div class="tarot-header">
-                            <span class="tarot-num">V</span>
-                            <h3>2D_Mouse</h3>
-                        </div>
-                        <span class="tarot-role">The Illustrator</span>
-                        <div class="tarot-stats">
-                            <div class="tstat">
-                                <span class="tstat-label">DRAW</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:97%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">CONCEPT</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:88%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">TEXTURE</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:85%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarot reveal" data-beast="fox">
-                    <div class="tarot-border">
-                        <div class="tarot-corner tl"></div>
-                        <div class="tarot-corner tr"></div>
-                        <div class="tarot-corner bl"></div>
-                        <div class="tarot-corner br"></div>
-                    </div>
-                    <div class="tarot-img">
-                        <img src="images/fox.png" alt="Code Fox">
-                        <div class="tarot-overlay"></div>
-                    </div>
-                    <div class="tarot-body">
-                        <div class="tarot-header">
-                            <span class="tarot-num">I</span>
-                            <h3>Code_Fox</h3>
-                        </div>
-                        <span class="tarot-role">The Architect</span>
-                        <div class="tarot-stats">
-                            <div class="tstat">
-                                <span class="tstat-label">CODE</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:95%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">DEBUG</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:88%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">ARCH</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:92%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarot reveal" data-beast="cat">
-                    <div class="tarot-border">
-                        <div class="tarot-corner tl"></div>
-                        <div class="tarot-corner tr"></div>
-                        <div class="tarot-corner bl"></div>
-                        <div class="tarot-corner br"></div>
-                    </div>
-                    <div class="tarot-img">
-                        <img src="images/cat.png" alt="Anim Cat">
-                        <div class="tarot-overlay"></div>
-                    </div>
-                    <div class="tarot-body">
-                        <div class="tarot-header">
-                            <span class="tarot-num">III</span>
-                            <h3>Anim_Cat</h3>
-                        </div>
-                        <span class="tarot-role">The Shifter</span>
-                        <div class="tarot-stats">
-                            <div class="tstat">
-                                <span class="tstat-label">ANIM</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:94%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">RIG</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:91%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">VFX</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:87%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tarot reveal" data-beast="bird">
-                    <div class="tarot-border">
-                        <div class="tarot-corner tl"></div>
-                        <div class="tarot-corner tr"></div>
-                        <div class="tarot-corner bl"></div>
-                        <div class="tarot-corner br"></div>
-                    </div>
-                    <div class="tarot-img">
-                        <img src="images/bird.png" alt="QA Bird">
-                        <div class="tarot-overlay"></div>
-                    </div>
-                    <div class="tarot-body">
-                        <div class="tarot-header">
-                            <span class="tarot-num">II</span>
-                            <h3>QA_Bird</h3>
-                        </div>
-                        <span class="tarot-role">The Inquisitor</span>
-                        <div class="tarot-stats">
-                            <div class="tstat">
-                                <span class="tstat-label">QA</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:96%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">TEST</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:92%"></div></div>
-                            </div>
-                            <div class="tstat">
-                                <span class="tstat-label">DOCS</span>
-                                <div class="tstat-bar"><div class="tstat-fill" style="--w:88%"></div></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="split-body">
+                    <p class="lead reveal">Kreatures is a game studio based at the <strong>Polo de Contenido Digital</strong> in Spain. We build games with other studios and brands: not as an outsourcer that disappears, but as a team that sits inside your pipeline until the project ships.</p>
+                    <p class="body reveal">Every creature in our bestiary is one of the disciplines we cover — code, 2D and 3D art, animation, QA. Pick the ones you need, or hand us the whole slice of work.</p>
+                    <dl class="facts">
+                        <div class="fact reveal"><dt>Base</dt><dd>Polo de Contenido Digital<br>España · Remote worldwide</dd></div>
+                        <div class="fact reveal"><dt>Model</dt><dd>Co-development<br>White-label &amp; in-house teams</dd></div>
+                        <div class="fact reveal"><dt>We speak</dt><dd>C++ · C# · Blueprint<br>Unity · Unreal · Godot</dd></div>
+                    </dl>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section contact">
-            <div class="section-label">
-                <span class="label-sigil">◈</span>
-                <span>THE SUMMONING</span>
+        <!-- 02 · SERVICES -->
+        <section class="slide slide-services" id="services" data-slide="02">
+            <div class="slide-tag">Slide 02 / 06 · What we do</div>
+            <div class="slide-head">
+                <h2 class="title reveal">Three domains.<br>One team.</h2>
+                <p class="body reveal">Each domain has its own creature, its own lead and its own pipeline. They plug into yours.</p>
             </div>
-            <div class="contact-dual">
-                <div class="contact-circle">
-                    <div class="c-ring c-ring-1"></div>
-                    <div class="c-ring c-ring-2"></div>
-                    <div class="c-ring c-ring-3"></div>
-                    <div class="c-ring c-ring-4"></div>
-                    <div class="c-sigil">
-                        <span>◈</span>
-                    </div>
-                    <div class="contact-info">
-                        <p>hello@kreatures.studio</p>
-                        <p>España · Worldwide</p>
+            <div class="cards">
+                <article class="card card-code reveal">
+                    <header>
+                        <span class="card-num">01</span>
+                        <h3>Krea.Code</h3>
+                    </header>
+                    <p>Gameplay programming, engines, tools and performance. We ship code you can keep.</p>
+                    <ul>
+                        <li>Gameplay &amp; systems programming</li>
+                        <li>Engine &amp; tools development</li>
+                        <li>Optimization and platform ports</li>
+                        <li>Prototype and vertical slice builds</li>
+                    </ul>
+                    <footer><img src="images/fox.png" alt=""><span class="card-foot">Code Fox · The Architect</span></footer>
+                </article>
+
+                <article class="card card-art reveal">
+                    <header>
+                        <span class="card-num">02</span>
+                        <h3>Krea.Art</h3>
+                    </header>
+                    <p>From first sketch to the mesh that lands in the build, with the budget you declared.</p>
+                    <ul>
+                        <li>Concept art &amp; visual development</li>
+                        <li>3D characters, props and environments</li>
+                        <li>PBR and hand-painted texturing</li>
+                        <li>UI / UX and in-game graphics</li>
+                    </ul>
+                    <footer><img src="images/mouse.png" alt=""><span class="card-foot">2D Mouse · The Illustrator</span></footer>
+                </article>
+
+                <article class="card card-anim reveal">
+                    <header>
+                        <span class="card-num">03</span>
+                        <h3>Krea.Anim</h3>
+                    </header>
+                    <p>Motion that sells the feel of the game: rigs, timing, impact and effects.</p>
+                    <ul>
+                        <li>2D &amp; 3D character animation</li>
+                        <li>Rigging and skinning</li>
+                        <li>Particle and shader VFX</li>
+                        <li>Cinematics and motion design</li>
+                    </ul>
+                    <footer><img src="images/cat.png" alt=""><span class="card-foot">Anim Cat · The Shifter</span></footer>
+                </article>
+            </div>
+        </section>
+        <!-- 03 · PROCESS -->
+        <section class="slide slide-process" id="process" data-slide="03">
+            <div class="slide-tag">Slide 03 / 06 · How we work</div>
+            <div class="slide-head">
+                <h2 class="title reveal">Four steps,<br>zero black boxes</h2>
+                <p class="body reveal">You always know what is in the build, what is next and what it costs.</p>
+            </div>
+            <ol class="steps">
+                <li class="step reveal">
+                    <span class="step-num">1</span>
+                    <h3>Listen</h3>
+                    <p>A call with your producers, a look at the build, an honest read on what is really blocking you.</p>
+                    <span class="step-time">Week 0</span>
+                </li>
+                <li class="step reveal">
+                    <span class="step-num">2</span>
+                    <h3>Prove</h3>
+                    <p>We prototype the risky part first. If it is not fun in two weeks, we tell you before you pay for a year.</p>
+                    <span class="step-time">Week 1—2</span>
+                </li>
+                <li class="step reveal">
+                    <span class="step-num">3</span>
+                    <h3>Build</h3>
+                    <p>Sprints inside your pipeline: your repo, your board, your build notes, a demo every Friday.</p>
+                    <span class="step-time">Week 3+</span>
+                </li>
+                <li class="step reveal">
+                    <span class="step-num">4</span>
+                    <h3>Hand over</h3>
+                    <p>Documented code, clean assets, tuned settings and a team that knows how to keep it alive after us.</p>
+                    <span class="step-time">Ship &amp; after</span>
+                </li>
+            </ol>
+        </section>
+
+        <!-- 04 · BESTIARY -->
+        <section class="slide slide-bestiary" id="bestiary" data-slide="04">
+            <div class="slide-tag">Slide 04 / 06 · The bestiary</div>
+            <div class="slide-head">
+                <h2 class="title reveal">Meet the<br>bestiary</h2>
+                <p class="body reveal">Five creatures, five disciplines. This is the roster you actually work with day to day.</p>
+            </div>
+            <div class="roster">
+                <figure class="beast reveal" data-beast="owl">
+                    <div class="beast-img"><img src="images/owl.png" alt="Research Owl"></div>
+                    <figcaption>
+                        <span class="beast-name">Research_Owl</span>
+                        <span class="beast-role">The Keeper</span>
+                        <span class="beast-skill">Production &amp; research</span>
+                    </figcaption>
+                </figure>
+                <figure class="beast reveal" data-beast="fox">
+                    <div class="beast-img"><img src="images/fox.png" alt="Code Fox"></div>
+                    <figcaption>
+                        <span class="beast-name">Code_Fox</span>
+                        <span class="beast-role">The Architect</span>
+                        <span class="beast-skill">Programming &amp; engines</span>
+                    </figcaption>
+                </figure>
+                <figure class="beast reveal" data-beast="cat">
+                    <div class="beast-img"><img src="images/cat.png" alt="Anim Cat"></div>
+                    <figcaption>
+                        <span class="beast-name">Anim_Cat</span>
+                        <span class="beast-role">The Shifter</span>
+                        <span class="beast-skill">Animation &amp; VFX</span>
+                    </figcaption>
+                </figure>
+                <figure class="beast reveal" data-beast="mouse">
+                    <div class="beast-img"><img src="images/mouse.png" alt="2D Mouse"></div>
+                    <figcaption>
+                        <span class="beast-name">2D_Mouse</span>
+                        <span class="beast-role">The Illustrator</span>
+                        <span class="beast-skill">Concept &amp; 2D art</span>
+                    </figcaption>
+                </figure>
+                <figure class="beast reveal" data-beast="bird">
+                    <div class="beast-img"><img src="images/bird.png" alt="QA Bird"></div>
+                    <figcaption>
+                        <span class="beast-name">QA_Bird</span>
+                        <span class="beast-role">The Watcher</span>
+                        <span class="beast-skill">QA &amp; player testing</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <!-- 05 · COLLABORATE -->
+        <section class="slide slide-models" id="models" data-slide="05">
+            <div class="slide-tag">Slide 05 / 06 · Ways to work together</div>
+            <div class="slide-head">
+                <h2 class="title reveal">Pick the shape<br>that fits you</h2>
+            </div>
+            <div class="models">
+                <article class="model reveal">
+                    <span class="model-kicker">A</span>
+                    <h3>Full co-development</h3>
+                    <p>We take a full slice or a whole game: design support, code, art and animation under one fixed scope and one lead you can call.</p>
+                </article>
+                <article class="model reveal">
+                    <span class="model-kicker">B</span>
+                    <h3>Overflow squad</h3>
+                    <p>Embedded creatures inside your pipeline for a few months. Your tools, your stand-ups, our discipline.</p>
+                </article>
+                <article class="model reveal">
+                    <span class="model-kicker">C</span>
+                    <h3>Prototype sprint</h3>
+                    <p>A small paid sprint to test the core loop or a mechanic before you commit a budget to it.</p>
+                </article>
+                <article class="model reveal">
+                    <span class="model-kicker">D</span>
+                    <h3>Rescue &amp; polish</h3>
+                    <p>We come into a project that is already running: untangle the code, hit the performance target, clean the backlog before certification.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 06 · CONTACT -->
+        <section class="slide slide-contact" id="contact" data-slide="06">
+            <div class="slide-tag">Slide 06 / 06 · Contact</div>
+            <div class="contact-grid">
+                <div class="contact-copy">
+                    <h2 class="title reveal">Got a project<br>that needs<br>more creatures?</h2>
+                    <ul class="contact-list">
+                        <li class="reveal"><span>Email</span><a href="mailto:hello@kreatures.studio">hello@kreatures.studio</a></li>
+                        <li class="reveal"><span>Studio</span><p>Polo de Contenido Digital<br>España · Working worldwide</p></li>
+                        <li class="reveal"><span>Reply</span><p>We answer within two business days, always from a human.</p></li>
+                    </ul>
+                    <div class="socials reveal">
+                        <a href="#" rel="noopener">X / Twitter</a>
+                        <a href="#" rel="noopener">LinkedIn</a>
+                        <a href="#" rel="noopener">itch.io</a>
+                        <a href="https://github.com/kreatures-studio" rel="noopener">GitHub</a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="form" id="contactForm" novalidate>
                     <div class="field">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required placeholder="---">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Studio or person">
                     </div>
                     <div class="field">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required placeholder="---">
+                        <label for="email">Your email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@studio.com">
                     </div>
                     <div class="field">
-                        <label for="service">Summon For</label>
-                        <select id="service" name="service" required>
-                            <option value="">— Choose —</option>
+                        <label for="need">What do you need?</label>
+                        <select id="need" name="need" required>
+                            <option value="">— Choose a domain —</option>
                             <option value="code">Krea.Code</option>
                             <option value="art">Krea.Art</option>
                             <option value="anim">Krea.Anim</option>
-                            <option value="multi">Multi-Domain</option>
+                            <option value="multi">All of them</option>
                         </select>
                     </div>
-                    <div class="field full">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Speak your intent..."></textarea>
+                    <div class="field">
+                        <label for="message">The project</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Engine, platform, scope, deadline…"></textarea>
                     </div>
-                    <button type="submit" class="ritual-btn">
-                        <span class="btn-bg"></span>
-                        <span class="btn-text">Initiate Summoning</span>
-                        <span class="btn-sigil">◈</span>
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-block">Send the message</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <span class="footer-sigil">◈</span>
-        <p>© 2026 KREATURES · All rights reserved</p>
+        <span class="footer-word">Kreatures</span>
+        <div class="footer-meta">
+            <span>© <span id="year">2026</span> Kreatures · All rights reserved</span>
+            <span>Polo de Contenido Digital · España</span>
+            <a href="#top">Back to top ↑</a>
+        </div>
     </footer>
-
-    <div class="skip" id="skipBar">
-        <span class="skip-label">SKIP</span>
-        <span class="skip-arrow">→</span>
-        <div class="skip-track">
-            <div class="skip-fill" id="skipFill"></div>
-        </div>
-        <div class="skip-pages">
-            <span data-section="hero">HOME</span>
-            <span data-section="divisions">DOMAINS</span>
-            <span data-section="team">BESTIARY</span>
-            <span data-section="contact">SUMMON</span>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
